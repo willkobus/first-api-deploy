@@ -1,8 +1,9 @@
 const express = require("express");
-
+const cors = require("cors");
 const server = express(); // this server is deaf AF. Can't hear ANYTHING.
 
 // Tell server how to process different payloads
+server.use(cors());
 server.use(express.json());
 
 const PORT = process.env.PORT || 3000;
