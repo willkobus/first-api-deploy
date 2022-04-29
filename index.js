@@ -153,7 +153,7 @@ server.post("/destinations", async (req, res) => {
   // Pixabay URL with API_key and the with location and destiation as query
   // Use axios or node-fetch
   
-  const pixabayURL = `https://pixabay.com/api/?key=${process.env.API_KEY}&q=${destination} ${location}`
+  const pixabayURL = `https://pixabay.com/api/?key=${process.env.PIXABAY_API_KEY}&q=${destination} ${location}`
   const {data} = await axios.get(pixabayURL)
 
   const photos = data.hits
