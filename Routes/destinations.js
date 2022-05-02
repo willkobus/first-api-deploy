@@ -1,6 +1,6 @@
 const express = require("express")
 const destinationsRouter = express.Router()
-const destinations = require("../Models/destinations")
+const {destinations} = require("../Models/destinations")
 const axios = require("axios")
 let i = 0;
 
@@ -41,7 +41,7 @@ destinationsRouter.post("/", async (req, res) => {
     };
     // adds newDest obj to DB
     
-    destinations.destinations.push(newDest)
+    destinations.push(newDest)
     // redirects to GET destinations. 303 status code redirects to GET paths only
     res.redirect(303, "/destinations");
   });
