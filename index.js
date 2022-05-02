@@ -24,28 +24,6 @@ server.listen(PORT, () => {
   console.log("Server Listening...");
 });
 
-//CRUD
-// Create => POST
-// Read => GET
-// Update => PUT
-// Delete => DELETE
-
-
-
-
-
-
-
-//Create => POST
-// POST /destinations
-// What is a destination. What makes a destination record?
-/*
-  - destination name (REQUIRED)
-  - location (REQUIRED)
-  - description
-*/
-
-
 server.get("/", (req, res) => {
   res.send("<h1>This is the landing page</h1>");
 });

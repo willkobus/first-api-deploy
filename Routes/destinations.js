@@ -2,27 +2,16 @@ const express = require("express")
 const destinationsRouter = express.Router()
 const {destinations} = require("../Models/destinations")
 const axios = require("axios")
-let i = 0;
+const {verifyInput} = require("../Middleware/verification")
 
 destinationsRouter.use(express.json());
 
-destinationsRouter.post("/", async (req, res) => {
-    //ONLY grab what I need
-    const { destination, location, description } = req.body;
+destinationsRouter.post("/", verifyInput,
+
+
+async (req, res) => {
     
-  
-    // VALIDATE I got what I expected (i.e destination & location are BOTH present AND not empty strings)
-    if (
-      !destination ||
-      !location ||
-      destination.length === 0 ||
-      location.length === 0
-    ) {
-      return res
-        .status(400)
-        .send({ error: "Destination and Location are BOTH required" });
-    }
-  
+    const { destination, location, description} = req.body;
     // Pixabay URL with API_key and the with location and destiation as query
     // Use axios or node-fetch
     
